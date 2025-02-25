@@ -16,33 +16,25 @@ header {
 
 /* Navigasi */
 nav {
-    display: flex;
-    flex-direction: column; /* Agar tombol tersusun vertikal */
-    align-items: center; /* Memastikan tombol berada di tengah */
-    justify-content: center; /* Posisi lebih proporsional */
-    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Pastikan elemen di tengah */
-    gap: 8px; /* Bisa dikurangi jika jarak terlalu jauh */
+    justify-content: center;
+    flex-wrap: wrap; /* Supaya tombol turun ke baris baru jika layar sempit */
+    gap: 5px; /* Tambah jarak antar tombol */
 }
 
 nav ul li {
-    width: 80%; /* Bisa diatur ke 100% atau sesuai keinginan */
-    text-align: center;
+    margin: 5px 0;
 }
 
 nav ul li a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    border-radius: 10px;
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -103,20 +95,26 @@ footer {
 /* FLEX */
 @media screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Biar tombol tersusun ke bawah */
+        list-style: none;
+        padding: 0;
+        margin: 0 auto; /* Pastikan ul ada di tengah */
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        width: 100%;
+        gap: 6px; /* Bisa dikurangi jika masih terlalu jauh */
     }
-
+    
     nav ul li {
-        width: 90%;
+        width: 90%; /* Pastikan lebar seragam */
+        max-width: 350px; /* Batasi agar tidak terlalu melebar di layar besar */
         text-align: center;
     }
-
+    
     nav ul li a {
         display: block;
-        width: 100%; /* Tombol jadi lebih lebar */
-        padding: 6px;
-        margin: 2px 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
     }
 }
