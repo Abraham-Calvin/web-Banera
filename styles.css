@@ -16,25 +16,33 @@ header {
 
 /* Navigasi */
 nav {
-    text-align: center;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column; /* Agar tombol tersusun vertikal */
+    align-items: center; /* Memastikan tombol berada di tengah */
+    justify-content: center; /* Posisi lebih proporsional */
+    width: 100%;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Supaya tombol turun ke baris baru jika layar sempit */
-    gap: 5px; /* Tambah jarak antar tombol */
+    flex-direction: column;
+    align-items: center; /* Pastikan elemen di tengah */
+    gap: 8px; /* Bisa dikurangi jika jarak terlalu jauh */
 }
 
 nav ul li {
-    margin: 5px 0;
+    width: 80%; /* Bisa diatur ke 100% atau sesuai keinginan */
+    text-align: center;
 }
 
 nav ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
     text-decoration: none;
     color: white;
     font-weight: bold;
