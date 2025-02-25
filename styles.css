@@ -35,7 +35,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 nav ul li a {
@@ -112,7 +112,7 @@ footer {
     nav ul li a {
         display: block;
         width: 100%; /* Tombol jadi lebih lebar */
-        padding: 6px;
-        margin: px 0;
+        padding: 6px 1px; /* Tambah padding untuk tombol */
+        margin-right: 5px; /* Tambah jarak antar tombol ke kanan */
     }
 }
