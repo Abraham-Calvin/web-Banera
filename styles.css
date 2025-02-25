@@ -26,8 +26,8 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: wrap; /* Supaya tombol turun ke baris baru jika layar sempit */
+    gap: 5px; /* Tambah jarak antar tombol */
 }
 
 nav ul li {
@@ -46,6 +46,7 @@ nav ul li a {
     text-align: center;
 }
 
+/* Hover efek */
 nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -94,19 +95,20 @@ footer {
 /* FLEX */
 @media screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Biar tombol tersusun ke bawah */
         align-items: center;
+        width: 100%;
     }
 
     nav ul li {
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
 
     nav ul li a {
         display: block;
-        width: 80%;
-        padding: 12px;
-        margin: 5px 0;
+        width: 100%; /* Tombol jadi lebih lebar */
+        padding: 6px;
+        margin: 2px 0;
     }
 }
