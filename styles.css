@@ -70,7 +70,7 @@ section {
 .language-switch {
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 10px;
 }
 
 .language-switch button {
@@ -113,5 +113,9 @@ footer {
         display: block;
         width: 100%; /* Tombol jadi lebih lebar */
         padding: 6px 1px 6px 1px; /* Tambah padding untuk tombol */
+    }
+    .language-switch button {
+        font-size: clamp(12px, 2vw, 14px); /* Ukuran berubah fleksibel */
+        padding: clamp(3px, 0.5vw, 6px) clamp(6px, 1vw, 10px); /* Padding ikut menyesuaikan */
     }
 }
