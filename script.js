@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //DESKRIPSI
             "tentang-desc": "Banera adalah perusahaan farmasi terkemuka yang berkomitmen menghadirkan produk berkualitas tinggi...",
             "ceo-desc": "Profil CEO kami, visi, dan misi dalam memimpin perusahaan...",
-            "ecatalog-desc": "Daftar produk yang tersedia dari Banera, tanpa fitur jual beli...",
+            "ecatalog-desc": "Daftar produk yang tersedia dari Banera",
             "sejarah-desc": "Perjalanan Banera dari awal hingga kini...",
             "testimoni-desc": "Ulasan dan pengalaman pelanggan kami...",
             "pencapaian-desc": "Penghargaan dan pencapaian Banera selama bertahun-tahun...",
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //DESCRIPTION
             "tentang-desc": "Banera is a leading pharmaceutical company committed to providing high-quality products...",
             "ceo-desc": "Our CEO profile, vision, and mission in leading the company...",
-            "ecatalog-desc": "List of available products from Banera, without buying or selling features...",
+            "ecatalog-desc": "List of available products from Banera",
             "sejarah-desc": "Banera's journey from the beginning until now...",
             "testimoni-desc": "Reviews and experiences from our customers...",
             "pencapaian-desc": "Awards and achievements Banera has received over the years...",
