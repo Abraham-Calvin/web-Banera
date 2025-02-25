@@ -23,40 +23,30 @@ nav {
 nav ul {
     list-style-type: none;
     padding: 0;
-    display: inline-block;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Supaya tidak kepanjangan di layar kecil */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 15px;
+    margin: 5px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    background-color: #005f8b; 
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
+    background-color: #0078a0;
+    transition: background 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #007bb5; 
-    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
 }
+
 
 /* Section */
 section {
@@ -97,4 +87,26 @@ footer {
     background: #008CBA;
     color: white;
     margin-top: 20px;
+}
+/* FLEX */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .language-switch {
+        top: 15px;
+        right: 10px;
+    }
+
+    .language-switch button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
 }
