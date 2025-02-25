@@ -112,7 +112,6 @@ footer {
     nav ul li a {
         display: block;
         width: 100%; /* Tombol jadi lebih lebar */
-        padding: 6px 1px; /* Tambah padding untuk tombol */
-        margin-right: 5px; /* Tambah jarak antar tombol ke kanan */
+        padding: 6px 1px 6px 1px; /* Tambah padding untuk tombol */
     }
 }
