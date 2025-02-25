@@ -26,11 +26,12 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Supaya tidak kepanjangan di layar kecil */
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 nav ul li {
-    margin: 5px;
+    margin: 5px 0;
 }
 
 nav ul li a {
@@ -41,6 +42,8 @@ nav ul li a {
     border-radius: 5px;
     background-color: #0078a0;
     transition: background 0.3s;
+    display: inline-block;
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -100,13 +103,10 @@ footer {
         text-align: center;
     }
 
-    .language-switch {
-        top: 15px;
-        right: 10px;
-    }
-
-    .language-switch button {
-        padding: 6px 10px;
-        font-size: 12px;
+    nav ul li a {
+        display: block;
+        width: 80%;
+        padding: 12px;
+        margin: 5px 0;
     }
 }
