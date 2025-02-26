@@ -1,121 +1,109 @@
-html {
-    scroll-behavior: smooth;
-}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    overflow-x: hidden;
 }
 
-/* Header */
 header {
-    background-color: #008CBA;
+    background: #007BFF;
     color: white;
     padding: 15px;
-    text-align: center;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Navigasi */
+/* NAVBAR */
 nav {
-    text-align: center;
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    list-style: none;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Supaya tombol turun ke baris baru jika layar sempit */
-    gap: 5px; /* Tambah jarak antar tombol */
+    gap: 20px;
 }
 
 nav ul li {
-    margin: 2px 0;
+    display: inline-block;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
-    font-weight: bold;
+    color: #333;
+    font-size: 18px;
     padding: 10px 15px;
-    border-radius: 5px;
-    background-color: #0078a0;
-    transition: background 0.3s;
-    display: inline-block;
-    text-align: center;
+    transition: 0.3s;
 }
 
-/* Hover efek */
 nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-
-/* Section */
-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Tombol Ganti Bahasa */
-.language-switch {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.language-switch button {
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: none;
-    background-color: #ddd;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 5px;
-    transition: background 0.3s;
+    color: #007bff;
 }
 
 .language-switch button:hover {
-    background-color: #bbb;
+    background: #0056b3;
+    color: white;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #008CBA;
-    color: white;
-    margin-top: 20px;
+
+/* Menu Burger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
-/* FLEX */
-@media screen and (max-width: 768px) {
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+
+/* MENU BURGER */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* RESPONSIF - TAMPILAN MOBILE */
+@media screen and (max-width: 1000px) {
+    .menu-toggle {
+        display: flex; /* Munculkan tombol menu burger */
+    }
+
     nav ul {
-        flex-direction: column; /* Biar tombol tersusun ke bawah */
-        align-items: center;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
+        background-color: white;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex; /* Munculkan menu saat tombol diklik */
     }
 
     nav ul li {
-        width: 90%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        display: block;
-        width: 100%; /* Tombol jadi lebih lebar */
-        padding: 6px 1px 6px 1px; /* Tambah padding untuk tombol */
-    }
-    .language-switch button {
-        font-size: clamp(12px, 2vw, 14px); /* Ukuran berubah fleksibel */
-        padding: clamp(3px, 0.5vw, 6px) clamp(6px, 1vw, 10px); /* Padding ikut menyesuaikan */
+        width: 100%;
+        padding: 15px 0;
     }
 }
