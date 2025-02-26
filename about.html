@@ -14,12 +14,15 @@
         </div>
     
         <nav>
-            <button class="menu-button">
+            <!-- Tombol Menu Burger -->
+            <button class="menu-button" aria-label="Buka Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul>
+
+            <!-- Daftar Menu -->
+            <ul class="menu-list">
                 <li><a href="index.html" data-translate="menu-home">Home</a></li>
                 <li><a href="about.html" data-translate="menu-about">Tentang Kami</a></li>
                 <li><a href="ecatalog.html" data-translate="menu-ecatalog">E-Catalog</a></li>
@@ -29,15 +32,21 @@
         </nav>
     
         <div class="language-switch">
-            <button id="lang-id">🇮🇩 ID</button>
-            <button id="lang-en">🇬🇧 EN</button>
+            <button id="btn-lang-id" class="lang-btn active">
+                🇮🇩 ID
+            </button>
+            <button id="btn-lang-en" class="lang-btn">
+                🇺🇸 EN
+            </button>
         </div>
     </header>
 
-    <section id="about">
-        <h2 data-translate="about-title">Tentang Kami</h2>
-        <p data-translate="about-desc">Banera adalah perusahaan farmasi terkemuka...</p>
-    </section>
+    <main>
+        <section id="about">
+            <h2 data-translate="about-title">Tentang Kami</h2>
+            <p data-translate="about-desc">Banera adalah perusahaan farmasi terkemuka...</p>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Banera. Semua hak dilindungi.</p>

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // 🔹 Objek untuk terjemahan multi-bahasa
     const translations = {
         "id": {
             "menu-home": "Beranda",
@@ -24,48 +25,52 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    // 🔹 Ambil elemen tombol bahasa
+    const langID = document.getElementById("btn-lang-id");
+    const langEN = document.getElementById("btn-lang-en");
+
+    // 🔹 Ambil bahasa yang disimpan di localStorage, default "id"
     let selectedLang = localStorage.getItem("selectedLanguage") || "id";
     translatePage(selectedLang);
+    setActiveLang(selectedLang);
 
-    document.getElementById("lang-id").addEventListener("click", function () {
-        setLanguage("id");
-    });
-
-    document.getElementById("lang-en").addEventListener("click", function () {
-        setLanguage("en");
-    });
+    // 🔹 Event listener untuk tombol bahasa
+    langID?.addEventListener("click", () => setLanguage("id"));
+    langEN?.addEventListener("click", () => setLanguage("en"));
 
     function setLanguage(language) {
         localStorage.setItem("selectedLanguage", language);
         translatePage(language);
+        setActiveLang(language);
     }
 
     function translatePage(lang) {
         document.querySelectorAll("[data-translate]").forEach(element => {
             const key = element.getAttribute("data-translate");
-            if (translations[lang][key]) {
+            if (translations[lang]?.[key]) {
                 element.textContent = translations[lang][key];
             }
         });
     }
-    
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.querySelector("nav ul");
+    function setActiveLang(lang) {
+        if (lang === "id") {
+            langID?.classList.add("active");
+            langEN?.classList.remove("active");
+        } else {
+            langID?.classList.remove("active");
+            langEN?.classList.add("active");
+        }
+    }
 
-    menuToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
+    // 🔹 Menu Toggle (Burger Menu)
     const menuButton = document.querySelector(".menu-button");
     const navMenu = document.querySelector("nav ul");
 
-    menuButton.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-        menuButton.classList.toggle("active");
-    });
+    if (menuButton && navMenu) {
+        menuButton.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+            menuButton.classList.toggle("active");
+        });
+    }
 });

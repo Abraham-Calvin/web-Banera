@@ -12,13 +12,17 @@
         <div class="logo">
             <img src="logo.png" alt="Logo Banera">
         </div>
+        
         <nav>
-            <button class="menu-button">
+            <!-- Tombol Menu Burger -->
+            <button class="menu-button" aria-label="Buka Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul>
+
+            <!-- Daftar Menu -->
+            <ul class="menu-list">
                 <li><a href="index.html" data-translate="menu-home">Home</a></li>
                 <li><a href="about.html" data-translate="menu-about">Tentang Kami</a></li>
                 <li><a href="ecatalog.html" data-translate="menu-ecatalog">E-Catalog</a></li>
@@ -26,16 +30,48 @@
                 <li><a href="contact.html" data-translate="menu-contact">Hubungi Kami</a></li>
             </ul>
         </nav>
+
         <div class="language-switch">
-            <button id="lang-id">🇮🇩 ID</button>
-            <button id="lang-en">🇬🇧 EN</button>
+            <button id="btn-lang-id" class="lang-btn active">
+                🇮🇩 ID
+            </button>
+            <button id="btn-lang-en" class="lang-btn">
+                🇺🇸 EN
+            </button>
         </div>
     </header>
 
-    <section id="contact">
-        <h2 data-translate="contact-title">Hubungi Kami</h2>
-        <p data-translate="contact-desc">Jika Anda memiliki pertanyaan, silakan hubungi kami...</p>
-    </section>
+    <main>
+        <section id="contact">
+            <div class="container">
+                <h2 data-translate="contact-title">Hubungi Kami</h2>
+                <p data-translate="contact-desc">
+                    Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini.
+                </p>
+    
+                <!-- Formulir Kontak -->
+                <form action="submit-form.php" method="POST" class="contact-form">
+                    <div class="input-group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                    </div>
+    
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                    </div>
+    
+                    <div class="input-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+                    </div>
+    
+                    <button type="submit" class="btn-submit">Kirim</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
 
     <footer>
         <p>&copy; 2025 Banera. Semua hak dilindungi.</p>
