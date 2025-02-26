@@ -61,27 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const menuButton = document.getElementById("menu-toggle");
-    const menuList = document.querySelector("nav ul");
+    const menuButton = document.querySelector(".menu-button");
+    const navMenu = document.querySelector("nav ul");
 
     menuButton.addEventListener("click", function () {
-        this.classList.toggle("active");
-        menuList.classList.toggle("active");
-
-        // Toggle display agar benar-benar muncul
-        if (menuList.classList.contains("active")) {
-            menuList.style.display = "flex";
-        } else {
-            menuList.style.display = "none";
-        }
-    });
-
-    // Tutup menu jika klik di luar
-    document.addEventListener("click", function (event) {
-        if (!menuList.contains(event.target) && !menuButton.contains(event.target)) {
-            menuButton.classList.remove("active");
-            menuList.classList.remove("active");
-            menuList.style.display = "none"; // Pastikan tertutup
-        }
+        navMenu.classList.toggle("active");
+        menuButton.classList.toggle("active");
     });
 });
