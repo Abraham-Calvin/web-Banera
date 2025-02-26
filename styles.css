@@ -1,9 +1,11 @@
+/* RESET DASAR */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* HEADER */
 header {
     background: #007BFF;
     color: white;
@@ -43,51 +45,52 @@ nav ul li a:hover {
     color: #007bff;
 }
 
-.language-switch button:hover {
-    background: #0056b3;
-    color: white;
-}
-
-
-/* Menu Burger */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle div {
-    width: 30px;
-    height: 4px;
-    background-color: #333;
-    margin: 5px 0;
-    transition: 0.4s;
-}
-
-
 /* MENU BURGER */
-.menu-toggle {
+.menu-button {
     display: none;
-    flex-direction: column;
+    background: none;
+    border: none;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
 }
 
-.menu-toggle span {
+.menu-button span {
+    display: block;
     width: 30px;
     height: 4px;
-    background-color: #333;
-    margin: 5px 0;
+    background: #333;
     transition: 0.3s;
+    border-radius: 5px;
+    margin: 5px 0;
 }
 
-/* RESPONSIF - TAMPILAN MOBILE */
-@media screen and (max-width: 1000px) {
-    .menu-toggle {
-        display: flex; /* Munculkan tombol menu burger */
+/* ANIMASI MENU BURGER */
+.menu-button.active span:nth-child(1) {
+    transform: translateY(15px) rotate(45deg);
+}
+
+.menu-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+@media screen and (max-width: 1100px) {
+    .menu-button {
+        display: flex; /* Munculkan tombol burger di layar kecil */
     }
 
+
     nav ul {
-        display: none;
+        display: none; /* Sembunyikan hanya di layar kecil */
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -96,14 +99,20 @@ nav ul li a:hover {
         background-color: white;
         text-align: center;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
     }
 
     nav ul.active {
-        display: flex; /* Munculkan menu saat tombol diklik */
+        display: flex; /* Tampilkan menu jika tombol diklik */
+    }
+}
+@media screen and (min-width: 1101px) {
+    .menu-button {
+        display: none; /* Sembunyikan tombol burger */
     }
 
-    nav ul li {
-        width: 100%;
-        padding: 15px 0;
+    nav ul {
+        display: flex !important; /* Paksa menu selalu muncul */
+        gap: 20px;
     }
 }
