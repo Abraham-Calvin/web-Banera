@@ -287,7 +287,7 @@ input:focus, textarea:focus {
     }
     
     .menu-list a {
-        font-size: 18px; /* Perbesar teks menu */
+        font-size: 30px; /* Perbesar teks menu */
         color: rgb(0, 124, 66);
         text-decoration: none;
         font-weight: bold;
