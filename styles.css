@@ -3,11 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: beige;
 }
 
 /* HEADER */
 header {
-    background: #007BFF;
+    background: white;
     color: white;
     padding: 15px;
     display: flex;
@@ -20,7 +21,7 @@ main {
 }
 
 footer {
-    background: #007BFF;
+    background: #007744;
     color: white;
     text-align: center;
     padding: 15px;
@@ -34,6 +35,7 @@ nav {
     justify-content: space-between;
     padding: 15px 20px;
     width: 100%;
+    
 }
 
 nav ul {
@@ -48,20 +50,40 @@ nav ul li {
 }
 
 nav ul li a {
+    position: relative;
     text-decoration: none;
-    color: white; /* Ubah warna teks menjadi putih */
+    color: #00A85A; /* Warna teks */
     font-size: 18px;
     padding: 10px 15px;
-    transition: 0.3s;
+    font-weight: bold;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 3px; /* Jarak garis dari teks */
+    width: 0px; /* Awalnya tidak terlihat */
+    height: 4px; /* Ketebalan garis */
+    background-color: red; /* Warna garis */
+    border-radius: 50px; /* Bikin rounded */
+    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateX(-50%); /* Supaya garis selalu mulai dari tengah */
+}
+
+nav ul li a:hover::after {
+    width: 50px; /* Panjang garis saat hover */
 }
 
 nav ul li a:hover {
-    color: #FFD700; /* Ubah warna saat hover */
+    color: #00A85a; /* Ubah warna saat hover */
 }
 
 .navbar-logo {
-    width: 120px; /* Atur sesuai kebutuhan */
+    width: 350px; /* Atur sesuai kebutuhan */
+    max-width: 40vb;
     height: auto; /* Menjaga proporsi gambar */
+    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.15)); 
 }
 
 /* MENU BURGER */
@@ -84,7 +106,7 @@ nav ul li a:hover {
     display: block;
     width: 30px;
     height: 4px;
-    background: white; /* Warna ikon menu putih */
+    background: #00a85a; /* Warna ikon menu putih */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     border-radius: 5px;
     margin: 5px 0;
@@ -127,12 +149,15 @@ nav ul li a:hover {
 
 .lang-btn:hover {
     background: #ddd;
+    border-bottom: 3px solid #b7b6b6; /* Garis bawah warna merah */
+    padding-bottom: 5px; /* Biar ada jarak dikit */
+    transition: 0.2s ease-in-out;
 }
 
 .lang-btn.active {
-    background: #007BFF;
+    background: #00A85a;
     color: white;
-    box-shadow: 0px 2px 5px rgba(0, 123, 255, 0.4);
+    box-shadow: 0px 2px 5px rgba(60, 60, 60, 0.4);
 }
 
 /* FORM KONTAK */
@@ -152,7 +177,7 @@ nav ul li a:hover {
 }
 
 h2 {
-    color: #007BFF;
+    color: #00A85A;
     margin-bottom: 10px;
 }
 
@@ -190,14 +215,14 @@ input, textarea {
 
 
 input:focus, textarea:focus {
-    border-color: #007BFF;
+    border-color: #00A85A;
     outline: none;
-    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0px 0px 5px rgba(0, 168, 90, 0.5);
 }
 
 /* TOMBOL */
 .btn-submit {
-    background: #007BFF;
+    background: #007744;
     color: white;
     border: none;
     padding: 12px;
@@ -208,12 +233,12 @@ input:focus, textarea:focus {
 }
 
 .btn-submit:hover {
-    background: #0056b3;
+    background: #00A85a;
 }
 
 
 /* RESPONSIVE */
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
     .menu-button {
         display: flex; /* Munculkan tombol burger */
     }
@@ -237,20 +262,16 @@ input:focus, textarea:focus {
     }
 
     nav ul li a {
-        color: #007BFF; /* Warna teks di menu dropdown */
+        color: #007744; /* Warna teks di menu dropdown */
         padding: 12px;
         display: block;
     }
 
-    nav ul li a:hover {
-        background-color: #007BFF;
-        color: white;
-    }
     .menu-list {
         position: fixed;
         top: 60px; /* Turunkan sedikit dari atas */
         left: 50%;
-        transform: translateX(-50%); /* Pusatkan menu */
+        transform: translateY(15%); /* Pusatkan menu */
         width: 90%; /* Biar tidak terlalu mepet */
         max-width: 350px; /* Batasi ukuran maksimal */
         background: rgba(250, 255, 232, 0.9); /* Warna gelap dengan transparansi */
@@ -267,17 +288,17 @@ input:focus, textarea:focus {
     
     .menu-list a {
         font-size: 18px; /* Perbesar teks menu */
-        color: rgb(101, 98, 255);
+        color: rgb(0, 124, 66);
         text-decoration: none;
         font-weight: bold;
     }
     
     .menu-list a:hover {
-        color: #ffffff; /* Ganti warna saat di-hover */
+        color: #00A85a; /* Ganti warna saat di-hover */
     }
 }
 
-@media screen and (min-width: 1101px) {
+@media screen and (min-width: 1201px) {
     .menu-button {
         display: none; /* Sembunyikan tombol burger */
     }
