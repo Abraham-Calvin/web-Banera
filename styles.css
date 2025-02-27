@@ -274,7 +274,7 @@ input:focus, textarea:focus {
         transform: translateY(15%); /* Pusatkan menu */
         width: 90%; /* Biar tidak terlalu mepet */
         max-width: 350px; /* Batasi ukuran maksimal */
-        background: rgba(250, 255, 232, 0.9); /* Warna gelap dengan transparansi */
+        background: beige;
         border-radius: 10px; /* Bikin sudut lebih halus */
         padding: 20px; /* Tambah padding biar lebih nyaman */
         text-align: center;
