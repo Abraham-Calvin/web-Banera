@@ -238,7 +238,7 @@ input:focus, textarea:focus {
 
 
 /* RESPONSIVE */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
     .menu-button {
         display: flex; /* Munculkan tombol burger */
     }
@@ -298,7 +298,7 @@ input:focus, textarea:focus {
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1101px) {
     .menu-button {
         display: none; /* Sembunyikan tombol burger */
     }
