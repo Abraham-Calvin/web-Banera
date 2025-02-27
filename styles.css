@@ -269,7 +269,7 @@ input:focus, textarea:focus {
 
     .menu-list {
         position: fixed;
-        top: 60px; /* Turunkan sedikit dari atas */
+        top: 45px; /* Turunkan sedikit dari atas */
         left: 50%;
         transform: translateY(15%); /* Pusatkan menu */
         width: 90%; /* Biar tidak terlalu mepet */
