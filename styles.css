@@ -81,7 +81,7 @@ nav ul li a:hover {
 
 .navbar-logo {
     width: 350px; /* Atur sesuai kebutuhan */
-    max-width: 25vb;
+    max-width: 20vb;
     height: auto; /* Menjaga proporsi gambar */
     filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.15)); 
 }
