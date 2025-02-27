@@ -59,6 +59,11 @@ nav ul li a:hover {
     color: #FFD700; /* Ubah warna saat hover */
 }
 
+.navbar-logo {
+    width: 120px; /* Atur sesuai kebutuhan */
+    height: auto; /* Menjaga proporsi gambar */
+}
+
 /* MENU BURGER */
 .menu-button {
     display: none;
