@@ -74,3 +74,58 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    function updateScrollbar() {
+        let scrollTop = Math.ceil(window.scrollY);
+        let maxScroll = Math.ceil(document.documentElement.scrollHeight - window.innerHeight);
+        let zoomLevel = window.visualViewport?.scale || 1;
+
+        if (scrollTop <= 0) {
+            // Jika di atas, buat atas lurus (0px), bawah tetap bulat
+            document.documentElement.style.setProperty("--scrollbar-top-radius", "0px");
+            document.documentElement.style.setProperty("--scrollbar-bottom-radius", "50px");
+        } else if (scrollTop + zoomLevel >= maxScroll) {
+            // Jika di bawah, buat bawah lurus (0px), atas tetap bulat
+            document.documentElement.style.setProperty("--scrollbar-top-radius", "50px");
+            document.documentElement.style.setProperty("--scrollbar-bottom-radius", "0px");
+        } else {
+            // Jika di tengah, buat semuanya bulat
+            document.documentElement.style.setProperty("--scrollbar-top-radius", "50px");
+            document.documentElement.style.setProperty("--scrollbar-bottom-radius", "50px");
+        }
+    }
+
+    window.addEventListener("scroll", updateScrollbar);
+    window.addEventListener("resize", updateScrollbar);
+    updateScrollbar();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var mybutton = document.getElementById("up-button");
+
+    window.addEventListener("scroll", function() {
+        // Jika user scroll lebih dari 5vh, tombol muncul
+        if (window.scrollY > window.innerHeight * 0.5) { 
+            mybutton.style.opacity = "1";
+            mybutton.style.pointerEvents = "auto"; 
+        } else {
+            mybutton.style.opacity = "0";
+            mybutton.style.pointerEvents = "none"; 
+        }
+    });
+
+    // Saat tombol diklik, scroll ke atas dengan efek smooth
+    mybutton.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+
+
+
+
+
+

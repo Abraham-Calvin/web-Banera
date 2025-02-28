@@ -1,9 +1,44 @@
+@font-face {
+    font-family: 'Kanit';
+    src: url('fonts/Kanit-Regular.woff2') format('woff2'),
+         url('fonts/Kanit-Regular.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Ukuran scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+    background: #f4f4f4;
+}
+
+/* Thumb scrollbar */
+::-webkit-scrollbar-thumb {
+    background: #007744;
+    height: var(--scrollbar-height, 20px); /* Minimal 20px */
+    border-radius: 50px; /* Default 50px */
+    transition: border-radius 0.3s ease-in-out, background 0.2s;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: #00A85A;
+}
+
+/* Saat menyentuh atas/bawah */
+::-webkit-scrollbar-thumb {
+    border-top-left-radius: var(--scrollbar-top-radius, 50px);
+    border-top-right-radius: var(--scrollbar-top-radius, 50px);
+    border-bottom-left-radius: var(--scrollbar-bottom-radius, 50px);
+    border-bottom-right-radius: var(--scrollbar-bottom-radius, 50px);
+}
+
 /* RESET DASAR */
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Kanit', Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: beige;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -14,19 +49,44 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.207); /* Tambahkan bayangan */
 
-main {
-    flex: 1; /* Memastikan main mengisi ruang kosong */
 }
 
 footer {
     background: #007744;
-    color: white;
     text-align: center;
     padding: 15px;
     margin-top: auto; /* Footer tetap di bawah */
 }
+
+footer p {
+    color: white;
+}
+
+#up-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007744;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none; /* Cegah klik saat tidak terlihat */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek saat hover */
+#up-button:hover {
+    background: #00A85A;
+    transform: scale(1.1);
+}
+
 
 /* NAVBAR */
 nav {
@@ -35,7 +95,6 @@ nav {
     justify-content: space-between;
     padding: 15px 20px;
     width: 100%;
-    
 }
 
 nav ul {
@@ -55,7 +114,6 @@ nav ul li a {
     color: #00A85A; /* Warna teks */
     font-size: 18px;
     padding: 10px 15px;
-    font-weight: bold;
 }
 
 nav ul li a::after {
@@ -64,19 +122,16 @@ nav ul li a::after {
     left: 50%;
     bottom: 3px; /* Jarak garis dari teks */
     width: 0px; /* Awalnya tidak terlihat */
-    height: 4px; /* Ketebalan garis */
+    height: 2px; /* Ketebalan garis */
     background-color: red; /* Warna garis */
-    border-radius: 50px; /* Bikin rounded */
+    border-radius: 100px; /* Bikin rounded */
     transition: width 0.15s ease-in-out, transform 0.3s ease-in-out;
     transform: translateX(-50%); /* Supaya garis selalu mulai dari tengah */
 }
 
+nav ul li a.active::after,
 nav ul li a:hover::after {
-    width: 50px; /* Panjang garis saat hover */
-}
-
-nav ul li a:hover {
-    color: #00A85a; /* Ubah warna saat hover */
+    width: 20px; /* Garis muncul di bawah menu aktif */
 }
 
 .navbar-logo {
