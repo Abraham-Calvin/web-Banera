@@ -2,27 +2,70 @@ document.addEventListener("DOMContentLoaded", function () {
     // 🔹 Objek untuk terjemahan multi-bahasa
     const translations = {
         "id": {
+            // NAVBAR
             "menu-home": "Beranda",
             "menu-about": "Tentang Kami",
             "menu-ecatalog": "E-Catalog",
             "menu-gerai": "Gerai & Rumah Sakit",
             "menu-contact": "Hubungi Kami",
+
+            // BERANDA
             "home-title": "Selamat Datang di Banera",
             "home-desc": "PT. Banera Medika Farma adalah perusahaan farmasi terkemuka...",
+
+            // TENTANG KAMI
             "about-title": "Tentang Kami",
-            "about-desc": "Banera adalah perusahaan farmasi terkemuka..."
+            "about-desc": "Banera adalah perusahaan farmasi terkemuka...",
+
+            // E-CATALOG
+            "ecatalog-desc": "Daftar produk yang tersedia dari Banera...",
+
+            // GERAI
+            "gerai-title": "Gerai & Rumah Sakit",
+            "gerai-desc": "Lokasi gerai dan rumah sakit mitra Banera...",
+
+            // HUBUNGI KAMI
+            "contact-title": "Hubungi Kami",
+            "contact-desc": "Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini.",
+            "name-title": "Nama",
+            "name-desc": "Masukan nama Anda",
         },
-        "en": {
+        "_en": {
+            // NAVBAR
             "menu-home": "Home",
             "menu-about": "About Us",
             "menu-ecatalog": "E-Catalog",
             "menu-gerai": "Stores & Hospitals",
             "menu-contact": "Contact Us",
+
+            // HOME
             "home-title": "Welcome to Banera",
             "home-desc": "PT. Banera Medika Farma is a leading pharmaceutical company...",
+
+            // ABOUT US
             "about-title": "About Us",
-            "about-desc": "Banera is a leading pharmaceutical company..."
-        }
+            "about-desc": "Banera is a leading pharmaceutical company...",
+
+            // E-CATALOG
+            "ecatalog-desc": "Product list from Banera",
+
+            // STORES
+            "gerai-title": "Stores & Hospitals",
+            "gerai-desc": "Stores & Hospitals's location that works with Banera",
+
+            // Contact Us
+            "contact-title": "Contact Us",
+            "contact-desc": "If You have question, please contact Us from the formulir beneath",
+            "name-title": "Name",
+            "name-desc": "Input Your name",
+            
+        },
+        get "en"() {
+            return this["_en"];
+        },
+        set "en"(value) {
+            this["_en"] = value;
+        },
     };
 
     // 🔹 Ambil elemen tombol bahasa

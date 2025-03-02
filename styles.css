@@ -120,7 +120,7 @@ nav ul li a::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 3px; /* Jarak garis dari teks */
+    bottom: 7px; /* Jarak garis dari teks */
     width: 0px; /* Awalnya tidak terlihat */
     height: 2px; /* Ketebalan garis */
     background-color: red; /* Warna garis */
