@@ -26,11 +26,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // HUBUNGI KAMI
             "contact-title": "Hubungi Kami",
-            "contact-desc": "Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini.",
+            "contact-desc": "Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini. wkkwkwkw",
             "name-title": "Nama",
-            "name-desc": "Masukan nama Anda",
+            "name-desc": "Masukkan nama Anda",
+            "message-title": "Pesan",
+            "submit-btn": "Kirim",
+            "placeholder-name": "Masukkan nama Anda",
+            "placeholder-email": "Masukkan email Anda",
+            "placeholder-message": "Tulis pesan Anda...",
+
+            // HAK CIPTA
+            "copyrights": "© 2025 Banera. Semua hak dilindungi."
         },
-        "_en": {
+        "en": {
             // NAVBAR
             "menu-home": "Home",
             "menu-about": "About Us",
@@ -53,19 +61,20 @@ document.addEventListener("DOMContentLoaded", function () {
             "gerai-title": "Stores & Hospitals",
             "gerai-desc": "Stores & Hospitals's location that works with Banera",
 
-            // Contact Us
+            // CONTACT US
             "contact-title": "Contact Us",
-            "contact-desc": "If You have question, please contact Us from the formulir beneath",
+            "contact-desc": "If you have questions, please contact us using the form below.",
             "name-title": "Name",
-            "name-desc": "Input Your name",
-            
-        },
-        get "en"() {
-            return this["_en"];
-        },
-        set "en"(value) {
-            this["_en"] = value;
-        },
+            "name-desc": "Enter your name",
+            "message-title": "Message",
+            "submit-btn": "Submit",
+            "placeholder-name": "Enter your name",
+            "placeholder-email": "Enter your email",
+            "placeholder-message": "Write your message...",
+
+            // COPYRIGHT
+            "copyrights": "© 2025 Banera. All rights reserved."
+        }
     };
 
     // 🔹 Ambil elemen tombol bahasa
@@ -94,6 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.textContent = translations[lang][key];
             }
         });
+
+        document.querySelectorAll("[data-translate-placeholder]").forEach(element => {
+            const key = element.getAttribute("data-translate-placeholder");
+            if (translations[lang]?.[key]) {
+                element.placeholder = translations[lang][key];
+            }
+        });
     }
 
     function setActiveLang(lang) {
@@ -110,65 +126,99 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.querySelector(".menu-button");
     const navMenu = document.querySelector("nav ul");
 
-    if (menuButton && navMenu) {
-        menuButton.addEventListener("click", function () {
-            navMenu.classList.toggle("active");
-            menuButton.classList.toggle("active");
-        });
-    }
-});
+    menuButton?.addEventListener("click", function () {
+        navMenu?.classList.toggle("active");
+        menuButton.classList.toggle("active");
+    });
 
-document.addEventListener("DOMContentLoaded", function () {
+    // 🔹 Efek Scrollbar Custom
     function updateScrollbar() {
         let scrollTop = Math.ceil(window.scrollY);
         let maxScroll = Math.ceil(document.documentElement.scrollHeight - window.innerHeight);
-        let zoomLevel = window.visualViewport?.scale || 1;
+        let thumbHeight = document.documentElement.scrollHeight / 20; // Tentukan tinggi minimal thumb
 
         if (scrollTop <= 0) {
-            // Jika di atas, buat atas lurus (0px), bawah tetap bulat
             document.documentElement.style.setProperty("--scrollbar-top-radius", "0px");
             document.documentElement.style.setProperty("--scrollbar-bottom-radius", "50px");
-        } else if (scrollTop + zoomLevel >= maxScroll) {
-            // Jika di bawah, buat bawah lurus (0px), atas tetap bulat
+        } else if (scrollTop >= maxScroll) {
             document.documentElement.style.setProperty("--scrollbar-top-radius", "50px");
             document.documentElement.style.setProperty("--scrollbar-bottom-radius", "0px");
         } else {
-            // Jika di tengah, buat semuanya bulat
             document.documentElement.style.setProperty("--scrollbar-top-radius", "50px");
             document.documentElement.style.setProperty("--scrollbar-bottom-radius", "50px");
+        }
+
+        // Jika thumb terlalu kecil, paksa ukurannya menjadi min 20px dan hilangkan radius
+        if (thumbHeight < 20) {
+            document.documentElement.style.setProperty("--scrollbar-thumb-height", "20px");
+            document.documentElement.style.setProperty("--scrollbar-top-radius", "0px");
+            document.documentElement.style.setProperty("--scrollbar-bottom-radius", "0px");
         }
     }
 
     window.addEventListener("scroll", updateScrollbar);
     window.addEventListener("resize", updateScrollbar);
     updateScrollbar();
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var mybutton = document.getElementById("up-button");
+    // 🔹 Tombol Scroll ke Atas
+    const upButton = document.getElementById("up-button");
 
-    window.addEventListener("scroll", function() {
-        // Jika user scroll lebih dari 5vh, tombol muncul
-        if (window.scrollY > window.innerHeight * 0.5) { 
-            mybutton.style.opacity = "1";
-            mybutton.style.pointerEvents = "auto"; 
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > window.innerHeight * 0.5) {
+            upButton.style.opacity = "1";
+            upButton.style.pointerEvents = "auto";
         } else {
-            mybutton.style.opacity = "0";
-            mybutton.style.pointerEvents = "none"; 
+            upButton.style.opacity = "0";
+            upButton.style.pointerEvents = "none";
         }
     });
 
-    // Saat tombol diklik, scroll ke atas dengan efek smooth
-    mybutton.addEventListener("click", function() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+    upButton.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("#contact-form");
+    const submitButton = form.querySelector(".btn-submit");
+    const responseMessage = document.createElement("p");
+    responseMessage.classList.add("response-message");
+    form.appendChild(responseMessage);
 
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Mencegah reload halaman
 
+        // Ambil data dari input form
+        const formData = new FormData(form);
 
+        // Ubah tombol menjadi "Loading..."
+        submitButton.textContent = "Mengirim...";
+        submitButton.disabled = true;
 
-
+        // Kirim data ke submit-form.php
+        fetch("submit-form.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                responseMessage.textContent = "✅ Pesan berhasil dikirim!";
+                responseMessage.style.color = "green";
+                form.reset(); // Bersihkan form
+            } else {
+                responseMessage.textContent = "❌ Gagal mengirim pesan!";
+                responseMessage.style.color = "red";
+            }
+        })
+        .catch(error => {
+            responseMessage.textContent = "⚠️ Terjadi kesalahan. Coba lagi.";
+            responseMessage.style.color = "orange";
+        })
+        .finally(() => {
+            // Kembalikan tombol ke keadaan semula
+            submitButton.textContent = "Kirim";
+            submitButton.disabled = false;
+        });
+    });
+});
