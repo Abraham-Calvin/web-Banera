@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // HUBUNGI KAMI
             "contact-title": "Hubungi Kami",
-            "contact-desc": "Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini. wkkwkwkw",
+            "contact-desc": "Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini.",
             "name-title": "Nama",
             "name-desc": "Masukkan nama Anda",
             "message-title": "Pesan",
