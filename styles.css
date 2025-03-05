@@ -67,7 +67,7 @@ footer p {
 #up-button {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 5px;
     background: #007744;
     color: white;
     border: none;
