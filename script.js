@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // HUBUNGI KAMI
             "contact-title": "Hubungi Kami",
-            "contact-desc": "Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini. wkkwkwkw",
+            "contact-desc": "Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini.",
             "name-title": "Nama",
             "name-desc": "Masukkan nama Anda",
             "message-title": "Pesan",
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const upButton = document.getElementById("up-button");
 
     window.addEventListener("scroll", function () {
-        if (window.scrollY > window.innerHeight * 0.5) {
+        if (window.scrollY > window.innerHeight * 0.25) {
             upButton.style.opacity = "1";
             upButton.style.pointerEvents = "auto";
         } else {
@@ -175,6 +175,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     upButton.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const smoothLinks = document.querySelectorAll('a[href^="#"]');
+
+    smoothLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Mencegah efek loncat langsung
+
+            const targetID = this.getAttribute("href").substring(1); // Ambil ID tujuan
+            const targetElement = document.getElementById(targetID);
+            const offset = 40; // Sesuaikan dengan tinggi navbar
+
+            if (targetElement) {
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth" // Efek scroll smooth
+                });
+            }
+        });
     });
 });
 
@@ -222,3 +244,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+

@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Kanit';
-    src: url('fonts/Kanit-Regular.woff2') format('woff2'),
-         url('fonts/Kanit-Regular.woff') format('woff');
+    src: url('/fonts/Kanit-Regular.woff2') format('woff2'),
+         url('/fonts/Kanit-Regular.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
@@ -18,6 +18,7 @@
     height: var(--scrollbar-height, 20px); /* Minimal 20px */
     border-radius: 50px; /* Default 50px */
     transition: border-radius 0.3s ease-in-out, background 0.2s;
+    min-height: 100px;
 }
 
 /* Hover effect */
@@ -217,84 +218,92 @@ nav ul li a:hover::after {
     font-size: 9px; /* Perkecil ukuran font tombol aktif */
 }
 
-
-
-/* FORM KONTAK */
-#contact {
-    background: #f4f4f4;
-    padding: 50px 20px;
-    text-align: center;
-}
-
+/*ABOUT*/
+/* Styling Umum */
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-h2 {
-    color: #00A85A;
+/* Gaya Judul */
+h2, h3 {
+    color: #007744;
     margin-bottom: 10px;
 }
 
+/* Gaya Paragraf */
 p {
-    color: #666;
     font-size: 16px;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* FORM */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Gaya List */
+ul {
+    padding-left: 20px;
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+ul li {
+    font-size: 16px;
+    color: #555;
 }
 
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input, textarea {
+/* Gaya Gambar Struktur Organisasi */
+.org-chart {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* ✅ Sub-Navbar */
+.sub-navbar {
+    background: #f8f8f8;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #007744;
+    padding: 10px 0;
+}
+
+.sub-navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-navbar ul li {
+    display: inline-block;
+}
+
+.sub-navbar ul li a {
+    text-decoration: none;
+    color: #007744;
     font-size: 16px;
-    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran elemen */
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out, color 0.3s;
 }
 
-
-input:focus, textarea:focus {
-    border-color: #00A85A;
-    outline: none;
-    box-shadow: 0px 0px 5px rgba(0, 168, 90, 0.5);
-}
-
-/* TOMBOL */
-.btn-submit {
+.sub-navbar ul li a:hover,
+.sub-navbar ul li a.active {
     background: #007744;
     color: white;
-    border: none;
-    padding: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
 }
-
-.btn-submit:hover {
-    background: #00A85a;
-}
-
 
 /* RESPONSIVE */
 @media screen and (max-width: 1275px) {
@@ -340,6 +349,21 @@ input:focus, textarea:focus {
     
     .menu-list a:hover {
         color: #00A85a; /* Ganti warna saat di-hover */
+    }
+
+    .sub-navbar {
+        display: flex;
+        flex-wrap: wrap; /* Biar tetap rapi kalau nggak muat di satu baris */
+        justify-content: center;
+        gap: 5px; /* Kurangi jarak antar item */
+        padding: 5px 0; /* Kurangi padding biar lebih ramping */
+        font-size: 12px; /* Ukuran lebih kecil di mobile */
+        position: sticky;
+    }
+
+    .sub-navbar a {
+        padding: 3px 6px; /* Kurangi padding dalam tombol */
+        white-space: nowrap; /* Supaya teks nggak turun ke bawah */
     }
 }
 
