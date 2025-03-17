@@ -185,11 +185,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const targetID = this.getAttribute("href").substring(1); // Ambil ID tujuan
             const targetElement = document.getElementById(targetID);
-            const offset = 40; // Sesuaikan dengan tinggi navbar
+
+            // 🔹 Dapatkan tinggi navbar dan sub-navbar
+            const navbar = document.querySelector("header");
+            const subNavbar = document.querySelector(".sub-navbar");
+            const subNavbarHeight = subNavbar ? subNavbar.offsetHeight : 0;
+            const totalOffset = subNavbarHeight + 10; // Tambahkan sedikit margin
 
             if (targetElement) {
                 const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - offset;
+                const offsetPosition = elementPosition + window.scrollY - totalOffset;
 
                 window.scrollTo({
                     top: offsetPosition,

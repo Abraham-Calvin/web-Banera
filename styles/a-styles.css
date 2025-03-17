@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Kanit';
-    src: url('./fonts/Kanit-Regular.woff2') format('woff2'),
-         url('./fonts/Kanit-Regular.woff') format('woff');
+    src: url('/fonts/Kanit-Regular.woff2') format('woff2'),
+         url('/fonts/Kanit-Regular.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
@@ -257,13 +257,6 @@ ul li {
     margin: 20px auto;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-}
-
 /* ✅ Sub-Navbar */
 .sub-navbar {
     background: #f8f8f8;
@@ -305,14 +298,15 @@ ul li {
     color: white;
 }
 
-/* RESPONSIVE */
 @media screen and (max-width: 1275px) {
+    /* Tombol burger muncul di layar kecil */
     .menu-button {
-        display: flex; /* Munculkan tombol burger */
+        display: flex;
     }
 
+    /* Sembunyikan menu utama dan buat dropdown */
     nav ul {
-        display: none; /* Sembunyikan menu di layar kecil */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 80px;
@@ -325,47 +319,86 @@ ul li {
         border-radius: 5px;
     }
 
+    /* Tampilkan menu dropdown saat tombol ditekan */
     nav ul.active {
-        display: flex; /* Tampilkan menu saat tombol diklik */
+        display: flex;
     }
 
     nav ul li a {
-        color: #007744; /* Warna teks di menu dropdown */
+        color: #007744;
         padding: 12px;
         display: block;
     }
-     
+
+    /* Styling menu dalam dropdown */
     .menu-list li {
         list-style: none;
-        margin: 15px 0; /* Jarak antar menu biar lega */
+        margin: 15px 0;
     }
-    
+
     .menu-list a {
-        font-size: 15px; /* Perbesar teks menu */
+        font-size: 15px;
         color: rgb(0, 124, 66);
         text-decoration: none;
         font-weight: bold;
     }
-    
+
     .menu-list a:hover {
-        color: #00A85a; /* Ganti warna saat di-hover */
+        color: #00A85a;
     }
 
+    /* Styling kontainer agar lebih responsif */
+    .container {
+        padding: 10px;
+    }
+
+    /* Sub-navbar maksimal 3 per baris */
     .sub-navbar {
         display: flex;
-        flex-wrap: wrap; /* Biar tetap rapi kalau nggak muat di satu baris */
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 5px; /* Kurangi jarak antar item */
-        padding: 5px 0; /* Kurangi padding biar lebih ramping */
-        font-size: 12px; /* Ukuran lebih kecil di mobile */
-        position: sticky;
+        gap: 5px;
+        padding: 5px 0;
+        font-size: 12px;
     }
 
+    /* Bagi sub-navbar jadi 3 item per baris */
     .sub-navbar a {
-        padding: 3px 6px; /* Kurangi padding dalam tombol */
-        white-space: nowrap; /* Supaya teks nggak turun ke bawah */
+        flex: 1 1 calc(33.33% - 10px); /* Maksimal 3 per baris */
+        padding: 5px;
+        text-align: center;
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
+
+    .sub-navbar ul {
+        display: flex;
+        flex-wrap: wrap; /* Supaya bisa turun ke baris berikutnya */
+        justify-content: center;
+        gap: 8px; /* Jarak antar tombol */
+        padding: 8px;
+    }
+
+    .sub-navbar ul li {
+        flex: 1 1 calc(33.33% - 10px); /* Maksimal 3 tombol per baris */
+        text-align: center;
+    }
+
+    .sub-navbar ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+        background: #007744;
+        color: white;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .sub-navbar ul li a:hover {
+        background: #00A85A;
     }
 }
+
 
 @media screen and (min-width: 1276px) {
     .menu-button {
