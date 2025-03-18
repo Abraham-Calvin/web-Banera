@@ -283,7 +283,7 @@ h3::after {
     font-size: 24px; /* Perbesar ukuran font */
     font-weight: bold; /* Tebalkan teks */
     color: #333; /* Warna teks lebih gelap agar mudah dibaca */
-    margin: 100px auto; /* Jarak atas & bawah agar lebih rapi */
+    margin: 120px auto; /* Jarak atas & bawah agar lebih rapi */
     max-width: 80%; /* Batasi lebar supaya tidak terlalu melebar */
     line-height: 1.5; /* Jarak antar baris */
     font-style: italic; /* Buat tampak seperti kutipan */
@@ -367,7 +367,7 @@ h3::after {
     /* ✅ Menu burger muncul di atas sub-navbar */
     .menu-list {
         position: absolute;
-        top: 60px; /* Sesuaikan dengan tinggi header */
+        top: 80px; /* Sesuaikan dengan tinggi header */
         right: 0;
         background: white;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -393,6 +393,7 @@ h3::after {
 
     .menu-list li {
         list-style: none;
+        width: 100%;
         margin: 15px 0;
     }
 

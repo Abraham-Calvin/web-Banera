@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "home-desc": "PT. Banera Medika Farma adalah perusahaan farmasi terkemuka...",
 
             // TENTANG KAMI
-            "about-quote": "\"Obat yang berkualitas, pelayanan yang tulus—karena setiap kesehatan yang terjaga adalah kebahagiaan yang nyata.\"",
+            "about-quote": "\"Obat yang berkualitas, pelayanan yang tulus \nkarena setiap kesehatan yang terjaga adalah kebahagiaan yang nyata.\"",
 
             // PROFIL PERUSAHAAN
             "profile-title": "Profil Perusahaan",
-            "profile-desc": "PT. BANERA MEDIKA FARMA (BMF) adalah perusahaan Perdagangan Besar Farmasi (PBF) yang berlokasi di Jln. Dr. Soetomo No. 31B, Kel. Watu, Kec. Langke Rembong, Kabupaten Manggarai, NTT. Perusahaan ini berawal pada tahun 2020 dengan nama CV. Banera Medika, yang bergerak di bidang apotik melalui Apotek Banera Medika. Seiring dengan perkembangan bisnis, CV. Banera Medika melakukan ekspansi dengan membuka cabang di Borong, Kabupaten Manggarai Timur, dan Bajawa, Kabupaten Ngada, NTT dalam rentang waktu tiga tahun. Pada tahun 2023, perusahaan meningkatkan statusnya menjadi PT. BANERA MEDIKA FARMA dengan akta notaris resmi dan pengesahan dari Kementerian Hukum dan HAM RI. Pada tahun 2024, PT. Banera Medika Farma melanjutkan proses pendaftaran sebagai Perusahaan Perdagangan Besar Farmasi (PBF) di Kementerian Kesehatan Republik Indonesia, memperoleh Nomor Induk Berusaha (NIB) dan Nomor Izin PBF.",
+            "profile-desc": "PT. BANERA MEDIKA FARMA (BMF) adalah perusahaan Pedagang Besar Farmasi (PBF) yang berlokasi di Jln. Dr. Soetomo No. 31B, Kel. Watu, Kec. Langke Rembong, Kabupaten Manggarai, NTT. \nPerusahaan ini berawal pada tahun 2020 dengan nama CV. Banera Medika, yang bergerak di bidang apotik melalui Apotek Banera Medika. Seiring dengan perkembangan bisnis, CV. Banera Medika melakukan ekspansi dengan membuka cabang di Borong, Kabupaten Manggarai Timur, dan Bajawa, Kabupaten Ngada, NTT dalam rentang waktu tiga tahun. \nPada tahun 2023, perusahaan meningkatkan statusnya menjadi PT. BANERA MEDIKA FARMA dengan akta notaris resmi dan pengesahan dari Kementerian Hukum dan HAM RI. \nPada tahun 2024, PT. Banera Medika Farma melanjutkan proses pendaftaran sebagai Perusahaan Perdagangan Besar Farmasi (PBF) di Kementerian Kesehatan Republik Indonesia, memperoleh Nomor Induk Berusaha (NIB) dan Nomor Izin PBF.",
 
             // PENGANTAR
             "introduction-title": "Pengantar",
@@ -85,11 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "home-desc": "PT. Banera Medika Farma is a leading pharmaceutical company...",
 
             // ABOUT US
-            "about-quote": "\"Quality medicine, sincere service—because every preserved health is a true happiness.\"",
+            "about-quote": "\"Quality medicine, sincere service \nbecause every preserved health is a true happiness.\"",
 
             // COMPANY PROFILE
             "profile-title": "Company Profile",
-            "profile-desc": "PT. BANERA MEDIKA FARMA (BMF) is a Large Pharmaceutical Trading Company (PBF) located at Jln. Dr. Soetomo No. 31B, Kel. Watu, Langke Rembong District, Manggarai Regency, NTT. The company started in 2020 under the name CV. Banera Medika, operating in pharmacy services through Apotek Banera Medika. Over the next three years, CV. Banera Medika expanded by opening branches in Borong, Manggarai Timur Regency, and Bajawa, Ngada Regency, NTT. In 2023, the company upgraded its status to PT. BANERA MEDIKA FARMA with an official notarial deed and approval from the Indonesian Ministry of Law and Human Rights. In 2024, PT. Banera Medika Farma continued the registration process as a Large Pharmaceutical Trading Company (PBF) with the Indonesian Ministry of Health, obtaining its Business Identification Number (NIB) and PBF License Number.",
+            "profile-desc": "PT. BANERA MEDIKA FARMA (BMF) is a Major Pharmaceutical Supplier (PBF) located at Jln. Dr. Soetomo No. 31B, Kel. Watu, Langke Rembong District, Manggarai Regency, NTT. \nThe company started in 2020 under the name CV. Banera Medika, operating in pharmacy services through Apotek Banera Medika. Over the next three years, CV. Banera Medika expanded by opening branches in Borong, Manggarai Timur Regency, and Bajawa, Ngada Regency, NTT. \nIn 2023, the company upgraded its status to PT. BANERA MEDIKA FARMA with an official notarial deed and approval from the Indonesian Ministry of Law and Human Rights. \nIn 2024, PT. Banera Medika Farma continued the registration process as a Large Pharmaceutical Trading Company (PBF) with the Indonesian Ministry of Health, obtaining its Business Identification Number (NIB) and PBF License Number.",
 
             // INTRODUCTION
             "introduction-title": "Introduction",
@@ -177,6 +177,18 @@ document.addEventListener("DOMContentLoaded", function () {
             const key = element.getAttribute("data-translate-placeholder");
             if (translations[lang]?.[key]) {
                 element.placeholder = translations[lang][key];
+            }
+        });
+
+        document.querySelectorAll("[data-translate]").forEach(element => {
+            const key = element.getAttribute("data-translate");
+            if (translations[lang]?.[key]) {
+                // Jika teks mengandung tag HTML, pakai innerHTML, jika tidak pakai innerText
+                if (/<[a-z][\s\S]*>/i.test(translations[lang][key])) {
+                    element.innerHTML = translations[lang][key];
+                } else {
+                    element.innerText = translations[lang][key];
+                }
             }
         });
     }
