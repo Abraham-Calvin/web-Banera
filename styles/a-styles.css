@@ -257,6 +257,39 @@ ul li {
     margin: 20px auto;
 }
 
+/* Styling untuk Judul */
+h3 {
+    text-align: center; /* Pusatkan teks */
+    font-size: 28px; /* Perbesar ukuran font */
+    font-weight: bold; /* Tebalkan teks */
+    color: #007744; /* Warna utama */
+    position: relative; /* Agar garis bawah bisa ditempatkan dengan absolute */
+    margin-bottom: 20px; /* Tambahkan ruang bawah */
+}
+
+/* Garis bawah merah di judul */
+h3::after {
+    content: "";
+    display: block;
+    width: 100px; /* Panjang garis */
+    height: 2px; /* Ketebalan garis */
+    background-color: red; /* Warna garis */
+    margin: 1px auto 0; /* Pusatkan dan beri jarak atas */
+    border-radius: 50px; /* Agar ujung garis tidak terlalu tajam */
+}
+
+.about-quote {
+    text-align: center; /* Pusatkan teks */
+    font-size: 24px; /* Perbesar ukuran font */
+    font-weight: bold; /* Tebalkan teks */
+    color: #333; /* Warna teks lebih gelap agar mudah dibaca */
+    margin: 100px auto; /* Jarak atas & bawah agar lebih rapi */
+    max-width: 80%; /* Batasi lebar supaya tidak terlalu melebar */
+    line-height: 1.5; /* Jarak antar baris */
+    font-style: italic; /* Buat tampak seperti kutipan */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan halus */
+}
+
 /* ✅ Sub-Navbar */
 .sub-navbar {
     background: #f8f8f8;

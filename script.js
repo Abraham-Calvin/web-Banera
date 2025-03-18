@@ -14,8 +14,42 @@ document.addEventListener("DOMContentLoaded", function () {
             "home-desc": "PT. Banera Medika Farma adalah perusahaan farmasi terkemuka...",
 
             // TENTANG KAMI
-            "about-title": "Tentang Kami",
-            "about-desc": "Banera adalah perusahaan farmasi terkemuka...",
+            "about-quote": "\"Obat yang berkualitas, pelayanan yang tulus—karena setiap kesehatan yang terjaga adalah kebahagiaan yang nyata.\"",
+
+            // PROFIL PERUSAHAAN
+            "profile-title": "Profil Perusahaan",
+            "profile-desc": "PT. BANERA MEDIKA FARMA (BMF) adalah perusahaan Perdagangan Besar Farmasi (PBF) yang berlokasi di Jln. Dr. Soetomo No. 31B, Kel. Watu, Kec. Langke Rembong, Kabupaten Manggarai, NTT. Perusahaan ini berawal pada tahun 2020 dengan nama CV. Banera Medika, yang bergerak di bidang apotik melalui Apotek Banera Medika. Seiring dengan perkembangan bisnis, CV. Banera Medika melakukan ekspansi dengan membuka cabang di Borong, Kabupaten Manggarai Timur, dan Bajawa, Kabupaten Ngada, NTT dalam rentang waktu tiga tahun. Pada tahun 2023, perusahaan meningkatkan statusnya menjadi PT. BANERA MEDIKA FARMA dengan akta notaris resmi dan pengesahan dari Kementerian Hukum dan HAM RI. Pada tahun 2024, PT. Banera Medika Farma melanjutkan proses pendaftaran sebagai Perusahaan Perdagangan Besar Farmasi (PBF) di Kementerian Kesehatan Republik Indonesia, memperoleh Nomor Induk Berusaha (NIB) dan Nomor Izin PBF.",
+
+            // PENGANTAR
+            "introduction-title": "Pengantar",
+            "introduction-desc": "Sebagai perusahaan yang bergerak dalam distribusi farmasi, PT. BANERA MEDIKA FARMA (BMF) berkomitmen untuk memberikan pelayanan distribusi obat-obatan yang terintegrasi di Indonesia. Pengalaman yang telah terbangun selama empat tahun dalam menjalankan apotek di berbagai kota di Flores, NTT, menjadi landasan kuat dalam membangun sistem distribusi yang efektif, terpercaya, dan profesional. Guna menjaga stabilitas perusahaan dan memastikan keberlanjutannya, PT. Banera Medika Farma terus melakukan inovasi, kolaborasi, serta kemitraan strategis untuk menciptakan rantai pasok farmasi yang harmonis dari hulu ke hilir.",
+
+            // VISI & MISI
+            "vision-title": "Visi",
+            "vision-desc": "Menjadi Perusahaan Farmasi Lokal yang Bermutu dan Terpercaya.",
+            "mission-title": "Misi",
+            "mission-1": "Mengembangkan pelayanan dan membangun sinergi yang kuat dengan mitra bisnis.",
+            "mission-2": "Mengelola usaha dengan manajemen yang profesional, transparan, dan efisien.",
+            "mission-3": "Memberikan nilai tambah dan manfaat yang optimal bagi seluruh mitra usaha.",
+
+            // RUANG LINGKUP
+            "scope-title": "Ruang Lingkup Usaha",
+            "scope-desc": "Sebagai perusahaan distribusi farmasi, PT. Banera Medika Farma berperan sebagai pusat distribusi obat-obatan yang telah berpengalaman dalam melayani masyarakat melalui jaringan apotek mitra yang tersebar di wilayah NTT, khususnya di sektor kefarmasian.",
+
+            // STRUKTUR ORGANISASI
+            "organization-title": "Struktur Organisasi",
+            "organization-desc": "Untuk memastikan efektivitas operasional dan pertumbuhan bisnis yang berkelanjutan, PT. Banera Medika Farma memiliki struktur organisasi yang solid, dengan tugas dan tanggung jawab yang jelas dalam setiap unit kerja.",
+
+            // PENGURUS PERUSAHAAN
+            "management-title": "Pengurus Perusahaan",
+            "management-desc": "Komitmen perusahaan dalam memberikan pelayanan terbaik didukung oleh kepemimpinan yang profesional dan berpengalaman di industri farmasi.",
+
+            // TATA KELOLA
+            "governance-title": "Tata Kelola Perusahaan",
+            "governance-1": "Pedoman Tata Kelola Perusahaan – Menjamin transparansi, akuntabilitas, dan profesionalisme dalam pengelolaan perusahaan.",
+            "governance-2": "Pedoman Bentuk Kepentingan – Menyelaraskan tujuan bisnis dengan kepentingan pelanggan, mitra, dan pemangku kepentingan lainnya.",
+            "governance-3": "Pedoman Manajemen Risiko – Mengelola dan memitigasi risiko operasional untuk menjaga keberlanjutan bisnis.",
+            "governance-4": "Pedoman Umum Sistem Pengendalian Internal – Membangun sistem pengendalian internal yang kuat untuk menjaga efektivitas dan efisiensi perusahaan.",
 
             // E-CATALOG
             "ecatalog-desc": "Daftar produk yang tersedia dari Banera...",
@@ -51,13 +85,48 @@ document.addEventListener("DOMContentLoaded", function () {
             "home-desc": "PT. Banera Medika Farma is a leading pharmaceutical company...",
 
             // ABOUT US
-            "about-title": "About Us",
-            "about-desc": "Banera is a leading pharmaceutical company...",
+            "about-quote": "\"Quality medicine, sincere service—because every preserved health is a true happiness.\"",
+
+            // COMPANY PROFILE
+            "profile-title": "Company Profile",
+            "profile-desc": "PT. BANERA MEDIKA FARMA (BMF) is a Large Pharmaceutical Trading Company (PBF) located at Jln. Dr. Soetomo No. 31B, Kel. Watu, Langke Rembong District, Manggarai Regency, NTT. The company started in 2020 under the name CV. Banera Medika, operating in pharmacy services through Apotek Banera Medika. Over the next three years, CV. Banera Medika expanded by opening branches in Borong, Manggarai Timur Regency, and Bajawa, Ngada Regency, NTT. In 2023, the company upgraded its status to PT. BANERA MEDIKA FARMA with an official notarial deed and approval from the Indonesian Ministry of Law and Human Rights. In 2024, PT. Banera Medika Farma continued the registration process as a Large Pharmaceutical Trading Company (PBF) with the Indonesian Ministry of Health, obtaining its Business Identification Number (NIB) and PBF License Number.",
+
+            // INTRODUCTION
+            "introduction-title": "Introduction",
+            "introduction-desc": "As a company engaged in pharmaceutical distribution, PT. BANERA MEDIKA FARMA (BMF) is committed to providing integrated pharmaceutical distribution services throughout Indonesia. The solid experience built over four years of operating pharmacies in various cities across Flores, NTT, serves as a strong foundation for establishing an effective, trustworthy, and professional distribution system. To maintain corporate stability and ensure sustainability, PT. Banera Medika Farma continuously innovates, collaborates, and establishes strategic partnerships to create a seamless pharmaceutical supply chain from upstream to downstream.",
+
+            // VISION & MISSION
+            "vision-title": "Vision",
+            "vision-desc": "To become a high-quality and trusted local pharmaceutical company.",
+            "mission-title": "Mission",
+            "mission-1": "Develop services and build strong synergy with business partners.",
+            "mission-2": "Manage the business with professionalism, transparency, and efficiency.",
+            "mission-3": "Provide added value and optimal benefits for all business partners.",
+
+            // BUSINESS SCOPE
+            "scope-title": "Business Scope",
+            "scope-desc": "As a pharmaceutical distribution company, PT. Banera Medika Farma serves as a central distributor of medicines with extensive experience in serving communities through a network of partner pharmacies spread across NTT, particularly in the pharmaceutical sector.",
+
+            // ORGANIZATIONAL STRUCTURE
+            "organization-title": "Organizational Structure",
+            "organization-desc": "To ensure operational effectiveness and sustainable business growth, PT. Banera Medika Farma has a solid organizational structure with clear duties and responsibilities in each working unit.",
+
+            // COMPANY MANAGEMENT
+            "management-title": "Company Management",
+            "management-desc": "The company's commitment to providing the best service is supported by professional leadership with extensive experience in the pharmaceutical industry.",
+
+            // CORPORATE GOVERNANCE
+            "governance-title": "Corporate Governance",
+            "governance-1": "Corporate Governance Guidelines – Ensuring transparency, accountability, and professionalism in corporate management.",
+            "governance-2": "Interest Alignment Guidelines – Aligning business objectives with the interests of customers, partners, and other stakeholders.",
+            "governance-3": "Risk Management Guidelines – Managing and mitigating operational risks to maintain business continuity.",
+            "governance-4": "General Internal Control Guidelines – Establishing a strong internal control system to maintain corporate effectiveness and efficiency.",
+
 
             // E-CATALOG
             "ecatalog-desc": "Product list from Banera",
 
-            // STORES
+             // STORES
             "gerai-title": "Stores & Hospitals",
             "gerai-desc": "Stores & Hospitals's location that works with Banera",
 
