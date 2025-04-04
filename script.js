@@ -331,4 +331,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
+
+    function showCards() {
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (cardTop < windowHeight - 100) {
+                card.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", showCards);
+    showCards();
+});
+
+
 // X+wvV1q5gY8FFf9CCuZgeYBysUnSMFbfGq9Sho1ozP0=
